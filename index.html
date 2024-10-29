@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cartas contra a humanidade</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheet.css">
+        <script>
+            // Lista de textos possíveis
+const textos = [
+    "Eu nunca pensei que encontraria ____________ na festa de aniversário do meu avô",
+    "Em uma tentativa de melhorar a segurança nacional, o governo decidiu substituir os cães de guarda por _______.",
+    "A verdadeira razão pela qual não fui ao trabalho hoje foi _______.",
+    "No final do dia, tudo que eu realmente quero é _______.",
+    "Quando perguntei o que havia de errado, meu amigo respondeu: 'É tudo por causa de _______."
+];
+
+// Função que escolhe um texto aleatório e altera o HTML
+function alterarTexto() {
+    const indexAleatorio = Math.floor(Math.random() * textos.length);
+    const textoEscolhido = textos[indexAleatorio];
+
+    const quadrado = document.getElementById('black-card');
+
+    // Adiciona a classe 'animar' para ativar a animação
+    quadrado.classList.add('animar');
+
+    // Remove a classe após a animação terminar para permitir futuras ativações
+    quadrado.addEventListener('animationend', () => {
+        quadrado.classList.remove('animar');
+    });
+
+    // Alterando o conteúdo do elemento com id 'texto'
+    setTimeout(() => {
+        document.getElementById('card-text').textContent = textoEscolhido;
+    }, 100);
+    }
+
+        </script>
+    </head>
+    <body>
+
+        <!-- RENDERIZAÇÃO DE CARTA PRETA-->
+        <div id="black-card">
+            <span id="card-text">escolhi esperar por que ──────────────</span> 
+            <span class="slogan">Cards Against Humanity</span>
+        </div>
+        <img src="recarregar.png" width="30px" id="reload-button" onclick="alterarTexto()">
+
+
+        <div id="white-card-container">
+
+            <div class="card">
+                <div class="white-card" id="wc1">Estuprar e saquear
+                    <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+                </div>
+                <div class="white-card-backface">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="white-card" id="wc2">Compartilhar agulhas.
+                    <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+                </div>
+                <div class="white-card-backface">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="white-card" id="wc3">Pagar mico em público.
+                    <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+                </div>
+                <div class="white-card-backface">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="white-card" id="wc4">Cotas raciais.
+                    <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+                </div>
+                <div class="white-card-backface">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="white-card" id="wc5">Um festival da linguiça
+                    <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+                </div>
+                <div class="white-card-backface">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

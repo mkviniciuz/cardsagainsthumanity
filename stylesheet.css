@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background: #252525;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#black-card {
+    padding: 40px;
+    margin-top: 50px;
+    width: 250px;
+    height: 380px;
+    background: #141414;
+    color: beige;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 22px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    border-radius: 20px;
+    box-shadow: 0px 2px 15px 1px #0f0f0fc4;
+    transition: 0.9s ease-in-out;
+    user-select: none;
+}
+
+#black-card:hover {
+    transition: 0.6s ease-in-out;
+    transform: translate(-0%, -6%);
+    box-shadow: 0px 60px 30px 10px #181818da;
+    cursor: pointer;
+}
+
+.slogan {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    width: 100%;
+    user-select: none;
+}
+
+#white-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+
+
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 330px;
+    transform-style: preserve-3d;
+}
+
+
+
+.white-card {
+    user-select: none;
+    padding: 40px;
+    width: 200px;
+    height: 330px;
+    background: rgb(245, 245, 245);
+    color: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 17px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    border-radius: 20px;
+    margin: 0px 3px;
+    box-shadow: 0px 2px 15px 1px #222222c4;
+    transition: 0.9s ease-in-out;
+}
+
+
+#wc1 {
+    transform: rotateZ(-15deg);
+}
+
+#wc1:hover {
+    transition: 0.6s ease-in-out;
+    transform: rotateZ(-15deg) translate(-0%, -20%);
+}
+
+#wc2 {
+    transform: rotateZ(-5deg) translate(-0%, -15%);
+}
+
+#wc2:hover {
+    transition: 0.6s ease-in-out;
+    transform: rotateZ(-5deg) translate(-0%, -40%);
+}
+
+#wc3 {
+    transform: rotateZ(-0deg) translate(-0%, -20%);
+}
+
+#wc3:hover {
+    transition: 0.6s ease-in-out;
+    transform: rotateZ(-0deg) translate(-0%, -45%);
+}
+
+#wc4 {
+    transform: rotateZ(5deg) translate(-0%, -15%);
+}
+
+#wc4:hover {
+    transition: 0.6s ease-in-out;
+    transform: rotateZ(5deg) translate(-0%, -40%);
+}
+
+#wc5 {
+    transform: rotateZ(15deg);
+}
+
+#wc5:hover {
+    transition: 0.6s ease-in-out;
+    transform: rotateZ(15deg) translate(-0%, -20%);
+}
+
+.white-card:hover {
+    transition: 0.6s ease-in-out;
+    transform: scale(110%) translate(0%, -25%);
+    box-shadow: 0px 60px 30px 10px #22222238;
+    cursor: pointer;
+}
+
+
+#reload-button {
+    position: absolute;
+    top: 1%;
+    left: 49%;
+    transition: 0.9s ease-in-out;
+}
+
+#reload-button:hover {
+    cursor: pointer;
+    transition: 0.9s ease-in-out;
+    transform: rotateZ(180deg);
+}
+
+@keyframes girar {
+    0% {
+        transform: rotateY(0deg);
+    }
+    60% {
+        transform: rotateY(360deg) rotateX(60deg);
+    }
+
+    100% {
+        transform: rotateY(360deg) rotateX(0deg);
+    }
+}
+
+/* Classe que será adicionada para ativar a animação */
+.animar {
+    animation: girar 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
