@@ -22,7 +22,7 @@ function alterarTexto() {
     const indexAleatorio = Math.floor(Math.random() * textos.length);
     const textoEscolhido = textos[indexAleatorio];
     const quadrado = document.getElementById('black-card');
-    const botao = document.getElementById('reload-button');
+    const botao = document.getElementById('black-card-pile-3');
 
     // Adiciona a classe 'animar' para ativar a animação
     quadrado.classList.add('animar');
@@ -53,7 +53,7 @@ function alterarTexto() {
             <span id="card-text">Guerra! Pra que serve? ──────────────</span> 
             <span class="slogan">Cards Against Humanity</span>
         </div>
-        <img src="recarregar.png" width="30px" id="reload-button" onclick="alterarTexto()">
+        <img src="recarregar.png" width="30px" >
 
 
         <div id="white-card-container">
@@ -112,6 +112,23 @@ function alterarTexto() {
 
             <div class="card-from-pile" id="card-pile-3">
                 <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+            </div>
+
+        </div>
+
+        <div id="black-card-pile">
+
+
+            <div class="black-card-from-pile" id="black-card-pile-1">
+                <span class="slogan">Cards Against Humanity</span>
+            </div>
+            
+            <div class="black-card-from-pile" id="black-card-pile-2">
+                <span class="slogan">Cards Against Humanity</span>
+            </div>
+
+            <div class="black-card-from-pile" id="black-card-pile-3" onclick="alterarTexto()">
+                <span class="slogan">Cards Against Humanity</span>
             </div>
 
         </div>
