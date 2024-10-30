@@ -141,18 +141,19 @@ body {
     top: 1%;
     left: 49%;
     transition: 0.9s ease-in-out;
+    user-select: none;
 }
 
 #reload-button:hover {
     cursor: pointer;
-    transition: 0.9s ease-in-out;
-    transform: rotateZ(180deg);
 }
 
 @keyframes girar {
+
     0% {
         transform: rotateY(0deg);
     }
+
     60% {
         transform: rotateY(360deg) rotateX(60deg);
     }
@@ -162,7 +163,69 @@ body {
     }
 }
 
+@keyframes inutilizar {
+
+    0% {
+        pointer-events: none;
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    55% {
+        transform: rotateZ(180deg);
+    }
+
+    99% {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+    100% {
+        pointer-events: all;
+        cursor: pointer;
+    }
+}
+
+
 /* Classe que será adicionada para ativar a animação */
 .animar {
-    animation: girar 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: girar 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.inutilizar {
+    animation: inutilizar 3s;
+}
+
+
+#white-card-pile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 15vw;
+}
+
+.card-from-pile {
+    user-select: none;
+    padding: 40px;
+    width: 50px;
+    height: 82.5px;
+    background: rgb(245, 245, 245);
+    color: #141414;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 15px 2px #1414145b;
+    margin-top: -120%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.card-from-pile:hover {
+    transition: 0.3s ease-in-out;
+    margin-top: -100%;
 }

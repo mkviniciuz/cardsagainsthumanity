@@ -21,16 +21,22 @@ const textos = [
 function alterarTexto() {
     const indexAleatorio = Math.floor(Math.random() * textos.length);
     const textoEscolhido = textos[indexAleatorio];
-
     const quadrado = document.getElementById('black-card');
+    const botao = document.getElementById('reload-button');
 
     // Adiciona a classe 'animar' para ativar a animação
     quadrado.classList.add('animar');
+    botao.classList.add('inutilizar');
 
     // Remove a classe após a animação terminar para permitir futuras ativações
     quadrado.addEventListener('animationend', () => {
         quadrado.classList.remove('animar');
     });
+
+    botao.addEventListener('animationend', () => {
+        botao.classList.remove('inutilizar');
+    });
+
 
     // Alterando o conteúdo do elemento com id 'texto'
     setTimeout(() => {
@@ -44,7 +50,7 @@ function alterarTexto() {
 
         <!-- RENDERIZAÇÃO DE CARTA PRETA-->
         <div id="black-card">
-            <span id="card-text">escolhi esperar por que ──────────────</span> 
+            <span id="card-text">Guerra! Pra que serve? ──────────────</span> 
             <span class="slogan">Cards Against Humanity</span>
         </div>
         <img src="recarregar.png" width="30px" id="reload-button" onclick="alterarTexto()">
@@ -53,7 +59,7 @@ function alterarTexto() {
         <div id="white-card-container">
 
             <div class="card">
-                <div class="white-card" id="wc1">Estuprar e saquear
+                <div class="white-card" id="wc1">O sangue de cristo.
                     <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
                 </div>
                 <div class="white-card-backface">
@@ -92,5 +98,23 @@ function alterarTexto() {
                 </div>
             </div>
         </div>
+
+        <div id="white-card-pile">
+
+
+            <div class="card-from-pile" id="card-pile-1">
+                <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+            </div>
+            
+            <div class="card-from-pile" id="card-pile-2">
+                <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+            </div>
+
+            <div class="card-from-pile" id="card-pile-3">
+                <span class="slogan" style="color: #141414;">Cards Against Humanity</span>
+            </div>
+
+        </div>
+
     </body>
 </html>
